@@ -3,16 +3,16 @@
 //Do not change any of the function names
 
 function multiplyArguments() {
-  var total = 1;
-  if (arguments.length === 0) {
-    return total * 0;
-  }
-  else {
-    for(var i = 0; i < arguments.length; i++) {
-      var result = total *= arguments[i];
+	var total = 1;
+	if (arguments.length === 0) {
+		return total * 0;
 	}
-	return result;
-  }
+	else {
+		for(var i = 0; i < arguments.length; i++) {
+			var result = total *= arguments[i];
+		}
+		return result;
+	}
 	//use the arguments keyword to multiply all of the arguments together and return the product
 	//if no arguments are passed in return 0
 	//if one argument is passed in just return it
@@ -53,13 +53,13 @@ function map(arr, cb) {
 
 function getUserConstructor() {
 	function User(options){
-      this.username = options.username;
-      this.name = options.name;
-      this.email = options.email;
-      this.password = options.password;
-      this.sayHi = function() {
-        return 'Hello, my name is ' + this.name;
-      };
+		this.username = options.username;
+		this.name = options.name;
+		this.email = options.email;
+		this.password = options.password;
+		this.sayHi = function() {
+			return 'Hello, my name is ' + this.name;
+		};
 	}
 	return User;
 	//create a constructor called User
@@ -131,3 +131,4 @@ module.exports = {
 	nFactorial: nFactorial,
 	cacheFunction: cacheFunction
 };
+git 
