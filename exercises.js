@@ -6,10 +6,9 @@ function multiplyArguments() {
 	var total = 1;
 	if (arguments.length === 0) {
 		return total * 0;
-	}
-	else {
-		for(var i = 0; i < arguments.length; i++) {
-			var result = total *= arguments[i];
+	} else {
+		for (var i = 0; i < arguments.length; i++) {
+			var result = (total *= arguments[i]);
 		}
 		return result;
 	}
@@ -24,7 +23,7 @@ function invokeCallback(cb) {
 }
 
 function sumArray(numbers, cb) {
-	var sum = numbers.reduce(function(a,b) {
+	var sum = numbers.reduce(function(a, b) {
 		return a + b;
 	}, 0);
 	cb(sum);
@@ -52,7 +51,7 @@ function map(arr, cb) {
 }
 
 function getUserConstructor() {
-	function User(options){
+	function User(options) {
 		this.username = options.username;
 		this.name = options.name;
 		this.email = options.email;
@@ -81,7 +80,7 @@ function addPrototypeMethod(Constructor) {
 function addReverseString() {
 	String.prototype.reverse = function() {
 		return this.split('').reverse().join('');
-    };
+	};
 	//add a method to the string constructor's prototype that returns a reversed copy of the string
 	//name this method reverse
 	//hint:
@@ -89,12 +88,9 @@ function addReverseString() {
 }
 
 function nFactorial(n) {
-	if (n < 0) 
-		return -1;
-	else if (n === 0)
-		return 1;
-	else
-		return n * nFactorial(n - 1);
+	if (n < 0) return -1;
+	else if (n === 0) return 1;
+	else return n * nFactorial(n - 1);
 	//return the factorial for n
 	//solve this recursively
 	//example:
@@ -115,7 +111,6 @@ function cacheFunction(cb) {
 	//and return 25 directly and will not invoke cb again
 }
 
-
 //Do not modify code below this line.
 ////--------------------------------
 
@@ -131,4 +126,3 @@ module.exports = {
 	nFactorial: nFactorial,
 	cacheFunction: cacheFunction
 };
-git 
