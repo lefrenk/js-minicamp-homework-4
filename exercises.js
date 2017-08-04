@@ -56,10 +56,10 @@ function getUserConstructor() {
 		this.name = options.name;
 		this.email = options.email;
 		this.password = options.password;
-		this.sayHi = function() {
-			return 'Hello, my name is ' + this.name;
-		};
 	}
+	User.prototype.sayHi = function() {
+		return 'Hello, my name is ' + this.name;
+	};
 	return User;
 	//create a constructor called User
 	//it should accept an options object with username, name, email, and password properties
@@ -98,6 +98,13 @@ function nFactorial(n) {
 }
 
 function cacheFunction(cb) {
+	var cache = {};
+	return function(x) {
+		if (cache.hasOwnProperty(x)) return cache[x];
+		cache[x] = cb(x);
+		return cache[x];
+	};
+
 	//Extra Credit
 	//use closure to create a cache for the cb function
 	//the function that you return should accept a single argument and invoke cb with that argument
